@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Travel</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+           
+        }
+        h1 {
+            font-size: 22px;
+            color: #007bff;
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input:focus, select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .form-check {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            margin-top: 10px;
+        }
+        .checkbox-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-top: 10px;
+}
+
+.checkbox-container label {
+    font-weight: bold;
+    margin-bottom: 5px; 
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Add a Travel Offer</h1>
+        <form>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" minlength="3" required title="The title must be at least 3 characters long">
+
+            <label for="destination">Destination:</label>
+            <input type="text" id="destination" name="destination" pattern="[A-Za-z ]{3,}" required title="The destination must be at least 3 characters long">
+
+            <label for="departure_date">Departure Date:</label>
+            <input type="date" id="departure_date" name="departure_date" required title="Select the departure date.">
+
+            <label for="return_date">Return Date:</label>
+            <input type="date" id="return_date" name="return_date" required title="Select the return date.">
+
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" step="0.01" min="0" required title="The price must be a positive number or decimal.">
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="availability" name="availability" title="Check if the travel offer is available.">
+                <label for="availability">Availability</label>
+            </div>
+            
+            <label for="category">Category:</label>
+            <select id="category" name="category" title="Select the category of the travel offer.">
+                <option value="adventure">Adventure</option>
+                <option value="relaxation">Relaxation</option>
+                <option value="culture">Culture</option>
+            </select>
+
+            <button type="submit">Add Offer</button>
+        </form>
+    </div>
+
+</body>
+</html>
